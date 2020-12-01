@@ -26,7 +26,6 @@ def setup_profile():
     firefox_profile.set_preference("permissions.default.stylesheet", 2)
     #firefox_profile.set_preference("permissions.default.image", 2)
 
-
     driver = webdriver.Firefox(firefox_profile=firefox_profile)
     driver.get(TEST_URL)
     driver.maximize_window()
@@ -41,7 +40,6 @@ def _smart_clicker(driver, xpath):
         except:
             driver.refresh()
             continue
-
 
 def add_to_cart(driver):
     add_to_cart_xpath =  "(//*[@class='spin-button-children'])"
@@ -73,7 +71,6 @@ def review_finalize_order(driver):
     cvv_xpath = "(//input[@data-automation-id='cvv-verify-cc-0'])[1]"
     cvv = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, cvv_xpath)))
     cvv.send_keys(CVV)
-
 
     #submit credit card details - review order
     review_order_xpath = "(//button[@data-automation-id='submit-payment-cc'])[1]"
