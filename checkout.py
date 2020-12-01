@@ -31,7 +31,7 @@ def setup_profile():
     driver.maximize_window()
     return driver
 
-def _smart_clicker(driver, xpath):
+def smart_clicker(driver, xpath):
     while True:
         try:
             find_element = WebDriverWait(driver, 2).until(EC.visibility_of_element_located((By.XPATH, xpath)))
